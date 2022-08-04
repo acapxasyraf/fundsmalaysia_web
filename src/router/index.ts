@@ -13,6 +13,23 @@ const routes: Array<RouteRecordRaw> = [
     redirect: { name: 'dashboard' },
   },
   {
+    name: 'main',
+    path: '/main',
+    component: AppLayout,
+    children: [
+      {
+        name: 'index',
+        path: 'index',
+        component: () => import('../pages/main/index/Index.vue'),
+      },
+      {
+        name: 'FundStatusCheck',
+        path: 'FundStatusCheck',
+        component: () => import('../pages/main/fundStatusCheck/FundStatusCheck.vue'),
+      },
+    ],
+  },
+  {
     name: 'admin',
     path: '/admin',
     component: AppLayout,
